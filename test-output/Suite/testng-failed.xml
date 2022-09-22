@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="Test_Set_1(failed)">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="RegressionTest"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="organizationModule.T01_CreateContactWithOrgTest">
+        <methods>
+          <include name="createOrgAndContacts"/>
+          <include name="quitBrowser"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- organizationModule.T01_CreateContactWithOrgTest -->
+    </classes>
+  </test> <!-- Test_Set_1(failed) -->
+  <test thread-count="2" parallel="tests" name="Test_Set_2(failed)">
+    <parameter name="browser" value="chrome"/>
+    <groups>
+      <run>
+        <include name="RegressionTest"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="contactsModule.T02_ValidateFinduplicateContactsTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="createContactsTest"/>
+          <include name="validateDuplicatesTest"/>
+          <include name="quitBrowser"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- contactsModule.T02_ValidateFinduplicateContactsTest -->
+    </classes>
+  </test> <!-- Test_Set_2(failed) -->
+</suite> <!-- Failed suite [Suite] -->
