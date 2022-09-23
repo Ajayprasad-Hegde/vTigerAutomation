@@ -50,11 +50,12 @@ public class T04_ValidateAdvancedSearch extends Base
     			+ "\\Test_Data\\validateAdvancedSearch.xlsx", 0).iterator();
     }
     
-    @Test(dataProvider="dataFeederPositive", enabled =false)
+    @Test(dataProvider="dataFeederPositive",priority = 2, enabled= false)
     public void advancedSearchPositive(String firstName, String expextedValue) throws InterruptedException
     {
     	contacts.setSearchField(firstName);
     	contacts.clickSearchNowBtn();
+    	System.out.println(firstName);
     	Thread.sleep(3000);
     	Assert.assertEquals(expextedValue, contacts.advancedSearchResults());
     	Thread.sleep(3000);
@@ -73,6 +74,7 @@ public class T04_ValidateAdvancedSearch extends Base
     {
     	contacts.setSearchField(firstName);
     	contacts.clickSearchNowBtn();
+    	System.out.println(firstName);
     	
     	Thread.sleep(3000);
     	try {
