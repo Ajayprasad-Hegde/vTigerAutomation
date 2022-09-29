@@ -12,7 +12,7 @@
  
 	<test name="Test_set_1" preserve-order="true">
 		<classes>
-			<class name="contactsModule.T04_ValidateAdvancedSearch" />
+			<class name="contactsModule.T02_CreateContactsTest" />
 		</classes>
 	</test>	
 </suite>

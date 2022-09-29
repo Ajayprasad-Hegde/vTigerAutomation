@@ -107,7 +107,6 @@ WebDriver driver;
 		}
 		
 		
-		
 		public void setBirthdate(String year, String month , String date) throws InterruptedException // Date Picker
 		{
 			birthDayCalander.click();
@@ -137,6 +136,65 @@ WebDriver driver;
 			
 			
 		}
+		
+		/*
+		public void setBirthdate(String year, String month , String date) throws InterruptedException // Date Picker
+		{
+			birthDayCalander.click();
+			
+			if(LocalDate.now().isAfter(LocalDate.of(Integer.parseInt(year), Month.valueOf(month), Integer.parseInt(date))))
+			{
+				while(true)
+				{
+					String[] monthAndYear = driver.findElement(By.xpath("//thead/tr[1]/td[2]")).getText().split(",");
+					if((monthAndYear[1]).equals(" "+year))
+					{
+						break;
+					}
+					driver.findElement(By.xpath("//td[contains(text(),'«')]")).click();
+				}
+				while(true)
+				{
+					String[] monthAndYear = driver.findElement(By.xpath("//thead/tr[1]/td[2]")).getText().split(",");
+					if(monthAndYear[0].equalsIgnoreCase(month))
+					{
+						break;
+					}
+					driver.findElement(By.xpath("//td[contains(text(),'‹')]")).click();
+				}
+				
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//td[contains(text(),'"+date+"')]")).click();	
+			}
+			else
+			{
+				while(true)
+				{
+					String[] monthAndYear = driver.findElement(By.xpath("//thead/tr[1]/td[2]")).getText().split(",");
+					if((monthAndYear[1]).equals(" "+year))
+					{
+						break;
+					}
+					driver.findElement(By.xpath("//td[contains(text(),'»')]")).click();
+				}
+				while(true)
+				{
+					String[] monthAndYear = driver.findElement(By.xpath("//thead/tr[1]/td[2]")).getText().split(",");
+					if(monthAndYear[0].equalsIgnoreCase(month))
+					{
+						break;
+					}
+					driver.findElement(By.xpath("//td[contains(text(),'›')]")).click();
+				}
+				
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//td[contains(text(),'"+date+"')]")).click();	
+			}
+			
+			
+			
+		}
+		*/
 		
 	//--------------------------------------------------------------------------//
 }
